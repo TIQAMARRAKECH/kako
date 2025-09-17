@@ -1,3 +1,4 @@
+// Configuration Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDSGX6_ZAOLU_zAE-goZ8XHVZmFamrMg-Y",
   authDomain: "livraison-tiqa-1.firebaseapp.com",
@@ -9,6 +10,7 @@ const firebaseConfig = {
   measurementId: "G-6T6KHPXBZW"
 };
 
+// Initialiser Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.database();
