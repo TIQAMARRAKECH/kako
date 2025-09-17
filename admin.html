@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - LIVRAISON TIQA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button onclick="goBack()">⬅ Retour</button>
+  <h1>Espace Admin</h1>
+
+  <div class="container">
+    <h2>Toutes les commandes</h2>
+    <ul id="adminCommandes"></ul>
+  </div>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function goBack(){ window.location.href="index.html"; }
+  </script>
+</body>
+</html>
