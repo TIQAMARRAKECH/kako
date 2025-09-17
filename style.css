@@ -4,13 +4,17 @@ body {
   text-align: center;
   margin: 0;
   padding: 20px;
+  position: relative;
 }
-h1 { color: #2c3e50; }
+h1 { 
+  color: #2c3e50; 
+  margin-top: 40px;
+}
 .container {
   background: white;
   padding: 20px;
   margin: 20px auto;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -21,13 +25,81 @@ input, select, button {
   margin: 8px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 button {
   background: #3498db;
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 button:hover {
   background: #2980b9;
+}
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  padding: 8px 12px;
+}
+.back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  padding: 8px 12px;
+}
+ul {
+  text-align: left;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  list-style-type: none;
+}
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 10px 20px;
+  background: #e9ecef;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  margin: 0 5px;
+}
+.tab.active {
+  background: #3498db;
+  color: white;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.status-en-attente {
+  background-color: #ffc107;
+  color: #000;
+}
+.status-en-cours {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.status-livree {
+  background-color: #28a745;
+  color: #fff;
 }
