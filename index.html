@@ -9,26 +9,35 @@
 <body>
   <h1>LIVRAISON TIQA</h1>
   
-  <div class="container">
-    <h2>Connexion</h2>
-    <input type="email" id="loginEmail" placeholder="Email">
-    <input type="password" id="loginPassword" placeholder="Mot de passe">
-    <button onclick="login()">Se connecter</button>
+  <div class="tab-container">
+    <div class="tab active" onclick="showTab('login')">Connexion</div>
+    <div class="tab" onclick="showTab('signup')">Inscription</div>
   </div>
-
-  <div class="container">
-    <h2>Inscription</h2>
-    <input type="text" id="signupName" placeholder="Nom complet">
-    <input type="email" id="signupEmail" placeholder="Email">
-    <input type="password" id="signupPassword" placeholder="Mot de passe">
-    
-    <select id="signupRole">
-      <option value="client">Client</option>
-      <option value="livreur">Livreur</option>
-      <option value="admin">Admin</option>
-    </select>
-    
-    <button onclick="signup()">S'inscrire</button>
+  
+  <div id="login-tab" class="tab-content active">
+    <div class="container">
+      <h2>Connexion</h2>
+      <input type="email" id="loginEmail" placeholder="Email">
+      <input type="password" id="loginPassword" placeholder="Mot de passe">
+      <button onclick="login()">Se connecter</button>
+    </div>
+  </div>
+  
+  <div id="signup-tab" class="tab-content">
+    <div class="container">
+      <h2>Inscription</h2>
+      <input type="text" id="signupName" placeholder="Nom complet">
+      <input type="email" id="signupEmail" placeholder="Email">
+      <input type="password" id="signupPassword" placeholder="Mot de passe">
+      
+      <select id="signupRole">
+        <option value="client">Client</option>
+        <option value="livreur">Livreur</option>
+        <option value="admin">Admin</option>
+      </select>
+      
+      <button onclick="signup()">S'inscrire</button>
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -37,5 +46,15 @@
 
   <script src="firebase-config.js"></script>
   <script src="auth.js"></script>
+  <script>
+    // Fonctions d'onglets
+    function showTab(tabName) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      
+      document.querySelector(`.tab:nth-child(${tabName === 'login' ? 1 : 2})`).classList.add('active');
+      document.getElementById(`${tabName}-tab`).classList.add('active');
+    }
+  </script>
 </body>
 </html>
